@@ -1,0 +1,928 @@
+/* GLOBAL CSS START */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: Veneer;
+    src: url(../fonts/Veneer-Regular.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    font-family: Veneer;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+:is(label, input, select, ::placeholder, textarea) {
+    font-family: "Roboto", sans-serif;
+}
+
+:is(.container) {
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.headingH1 {
+    font-family: Veneer;
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 50px;
+    letter-spacing: 0px;
+    color: #000;
+}
+
+.headingH2 {
+    font-family: Veneer;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 45px;
+    letter-spacing: 0px;
+    color: #000;
+}
+
+.container>.mainBtn {
+    justify-content: center;
+}
+
+.mainBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.mainBtn :is(a, button) {
+    font-family: Veneer;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+    transition: all ease .3s;
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: #F6D710;
+    color: #000;
+    cursor: pointer;
+}
+
+.mainBtn :is(a, button).yellowBtn {
+    background: #F6D710;
+    color: #000;
+    border: 1px solid #F6D710;
+}
+
+.mainBtn :is(a, button):hover,
+.mainBtn :is(a, button).yellowBtn:hover {
+    background: #000;
+    color: #F6D710;
+}
+
+.mainBtn :is(a, button).blackBtn {
+    background: #000;
+    color: #F6D710;
+    border: 1px solid #000;
+}
+
+.mainBtn :is(a, button).blackBtn:hover {
+    background: #F6D710;
+    color: #000;
+}
+
+/* GLOBAL CSS END */
+
+/* HEADER CSS START */
+
+.mainHeader {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.mainHeadRow {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.headLogoImg {
+    width: 100%;
+    max-width: 220px;
+}
+
+.headLogoImg a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.headLogoImg a img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.headerLogoLinksIconsArea {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr max-content auto;
+}
+
+.headerLinksHldr ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+    height: 100%;
+}
+
+.headerLinksHldr ul li a {
+    font-family: Veneer;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+    color: #000;
+    transition: all .2s ease-in-out;
+    position: relative;
+}
+
+.headerLinksHldr ul li a:hover {
+    color: #F6D710;
+}
+
+.headerLinksHldr ul li a:before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: #F6D710;
+    transition: transform .25s ease-out;
+}
+
+.headerLinksHldr ul li a:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.headerIconsHldr ul {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.headerIconsHldr ul li {
+    background: #F6D710;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    transition: all ease .3s;
+}
+
+.headerIconsHldr ul li:hover {
+    background: #000;
+}
+
+.headerIconsHldr ul li:hover a img {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(57%) saturate(4581%) hue-rotate(341deg) brightness(96%) contrast(102%);
+}
+
+.headerIconsHldr ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.headerIconsHldr ul li a img {
+    height: 15px;
+    width: 15px;
+    object-fit: contain;
+}
+
+.headerHamburgerIconHldr .menuDrawerOpen {
+    width: 30px;
+    height: 30px;
+}
+
+.headerHamburgerIconHldr .menuDrawerOpen img {
+    height: 100%;
+    width: 100%;
+}
+
+.headerDrawerCrossIcon .menuDrawerClose {
+    width: 30px;
+    height: 30px;
+}
+
+.headerDrawerCrossIcon .menuDrawerClose img {
+    height: 100%;
+    width: 100%;
+}
+
+.headerLinksMobileDrawer .headerDrawerCrossIcon {
+    display: none;
+}
+
+.headerHamburgerIconHldr {
+    display: none;
+}
+
+/* HEADER CSS END */
+
+/* BANNER CSS START */
+
+.mainBanner {
+    padding-top: 148px;
+    padding-bottom: 148px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.mainBanCont {
+    background: #FFFFFFD9;
+    width: fit-content;
+    padding: 60px 40px;
+    border-radius: 20px;
+}
+
+.mainBanCont :is(p, li) {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0px;
+    color: #000;
+    margin-top: 20px;
+}
+
+.mainBanCont :is(ol, ul) li {
+    padding-left: 30px;
+    position: relative;
+}
+
+.mainBanCont :is(ol, ul) li::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 15px;
+    background-image: url(../img/right-arrow-black.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* BANNER CSS END */
+
+/* DETAIL CARDS CSS START  */
+
+.detailCardsMain {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.mainHeadHldr {
+    margin-bottom: 60px;
+}
+
+.mainHeadHldr .headingH2 {
+    text-align: center;
+}
+
+.mainHeadHldr p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    color: #000;
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.mainHeadHldr p strong {
+    display: block;
+    font-weight: 600;
+}
+
+.detCardRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 120px;
+}
+
+.detCardMain {
+    margin-right: 0;
+    width: 100%;
+    position: relative;
+}
+
+.detCardPrice * {
+    color: #F6D710;
+}
+
+.detCardPrice .headingH2 sup {
+    font-family: Veneer;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 0px;
+}
+
+.detCardPrice h4 {
+    font-family: Veneer;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+}
+
+.detCardHldr {
+    background: #000000;
+    height: 100%;
+    max-width: 358px;
+    margin-left: auto;
+}
+
+.detCardPrice {
+    height: 102px;
+    width: 102px;
+    background: #231F20;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    top: -52px;
+    left: 0px;
+}
+
+.detCardHeader {
+    border: 6px solid #000;
+    border-bottom: none;
+    margin-bottom: 0px !important;
+    background: #F6D710;
+    padding: 33px 10px;
+}
+
+.detCardHeader * {
+    text-align: center;
+    color: #000;
+}
+
+.detCardBody * {
+    color: #F6D710;
+}
+
+.detCardBody {
+    padding: 30px;
+}
+
+.detCardBody h3 {
+    font-family: Veneer;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.detCardBody h3 em {
+    display: block;
+    font-style: normal;
+}
+
+.detCardBody :is(ol, ul) {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.detCardBody :is(ol, ul) li {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    padding-left: 30px;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    transition: all ease .3s;
+}
+
+.detCardBody :is(ol, ul) li::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 15px;
+    background-image: url(../img/right-arrow-yellow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.detCardBody :is(ol, ul) li:hover {
+    transform: translateY(-2px);
+}
+
+.detCrdBtmCnt {
+    margin-top: 40px;
+}
+
+.detCrdBtmCnt p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #000;
+}
+
+.detCrdBtmCnt p a {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 1px;
+}
+
+/* DETAIL CARDS CSS END  */
+
+/* HOTEL IMAGE GALLERY CSS START  */
+
+.hotelImgGallery {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.hotelGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hotelGallery a {
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.hotelGallery a:hover img {
+    transform: scale(1.05);
+}
+
+.hotelGallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+/* HOTEL IMAGE GALLERY CSS END  */
+
+/* IMAGE WITH CONTENT CSS START  */
+
+.imageWithCntFull {
+    background: #F6D710;
+    position: relative;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.imgWithCntRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.imgWithCnt {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imgWithCnt p {
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #000;
+}
+
+.imgWithImg {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 52%;
+}
+
+.imgWithImg::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: #00000080;
+}
+
+.imgWithImgHldr {
+    width: 100%;
+    height: 100%;
+}
+
+.imgWithImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imgWithImgCnt {
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    left: 30px;
+}
+
+.imgWithImgCnt span {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    color: #F6D710;
+}
+
+.icon-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.icon-list img {
+    width: 27px;
+    object-fit: contain;
+}
+
+.icon-list p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    color: #F6D710;
+}
+
+/* IMAGE WITH CONTENT CSS END  */
+
+/* SOCIAL ICONS WITH CONTENT CSS START */
+
+.socialIconsMn ul {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.socialIconsMn ul li {
+    background: #F6D710;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    transition: all ease .3s;
+}
+
+.socialIconsMn ul li:hover {
+    background: #000;
+}
+
+.socialIconsMn ul li:hover a img {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(57%) saturate(4581%) hue-rotate(341deg) brightness(96%) contrast(102%);
+}
+
+.socialIconsMn ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.socialIconsMn ul li a img {
+    height: 15px;
+    width: 15px;
+    object-fit: contain;
+}
+
+.secIconWithCntImg {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.secIconWithCntImgRow {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.secIconWithCntImgHldr {
+    height: 200px;
+    width: 200px;
+}
+
+.secIconWithCntImgHldr img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* SOCIAL ICONS WITH CONTENT CSS END */
+
+/* BG WITH IMAGE BOX CSS START */
+
+.bgWithImgBox {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bgWithImgBox .headingH2 {
+    color: #F6D710;
+}
+
+.bgWithImgBoxRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #FFFFFFD9;
+    padding: 80px 60px;
+    border-radius: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bgWithImgBoxImgHldr {
+    height: 170px;
+    width: 150px;
+}
+
+.bgWithImgBoxImgHldr img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* BG WITH IMAGE BOX CSS END */
+
+/* RICH TEXT CSS START */
+
+.richText {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+/* RICH TEXT CSS END */
+
+/* FOOTER CSS START */
+
+.mainFooter {
+    margin-top: 120px;
+    background: #F6D710;
+}
+
+.mainFootRow {
+    display: grid;
+    grid-template-columns: .85fr 1fr .85fr;
+    gap: 30px;
+}
+
+.footDetLeft,
+.ftMnLinks,
+.ftMnNsLtr {
+    padding: 60px 0;
+}
+
+.ftMnNsLtr {
+    position: relative;
+}
+
+.ftAbsLogo {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+}
+
+.ftAbsLogo img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ftMnLinks {
+    background: #CDCDCD;
+}
+
+.mainFootBottom {
+    background: #000000;
+}
+
+.ftDetCnt h3,
+.ftMnLinks ul li a {
+    font-family: Veneer;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 0px;
+    color: #000;
+}
+
+.ftDetCnt p {
+    margin-top: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+}
+
+.ftDetImg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.foot-news-letter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.foot-news-letter .mainBtn {
+    margin-top: 0px !important;
+}
+
+.foot-news-letter .field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 322px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 15px 20px;
+    border: 1px solid #000000;
+}
+
+.foot-news-letter .field input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.foot-news-letter .field input,
+.foot-news-letter .field input::placeholder {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+    color: #000;
+}
+
+.ftCntImgText {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.ftCntImgText h3 {
+    font-family: Veneer;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.ftCntImgText img {
+    width: 100px;
+    object-fit: contain;
+}
+
+.ftMnLinks ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.ftMnLinks ul li a {
+    position: relative;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    display: block;
+}
+
+.ftMnLinks ul li a:hover {
+    color: #000;
+}
+
+.ftMnLinks ul li a:before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: #000;
+    transition: transform .25s ease-out;
+}
+
+.ftMnLinks ul li a:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.ftBtmCnt {
+    padding: 12px 0;
+}
+
+.ftBtmCnt p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+/* FOOTER CSS END */
