@@ -78,6 +78,11 @@
         padding-top: 120px;
         padding-bottom: 120px;
     }
+
+    .CollectionAllMember {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
 }
 
 @media (max-width : 1024px) {
@@ -402,6 +407,45 @@
         margin-top: 80px;
         margin-bottom: 80px;
     }
+
+    .CollectionAllMember {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .collectionAllMembRow {
+        gap: 20px;
+    }
+
+    .detCardsHldr {
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 20px;
+    }
+
+    .collMbrCollPr {
+        padding: 20px;
+    }
+
+    .searchField {
+        padding: 13px;
+    }
+
+    .locations-container {
+        margin-top: 20px;
+    }
+
+    .check-all-member-form {
+        margin-top: 15px;
+    }
+
+    .showingMembers {
+        font-size: 20px;
+    }
+
+    body:has(.headerLinksMobileDrawer.active) {
+        overflow: hidden;
+    }
 }
 
 @media (max-width : 768px) {
@@ -596,6 +640,88 @@
         width: 230px;
         height: 230px;
     }
+
+    .collectionAllMembRow {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .colAllMebLeft {
+        position: fixed;
+        top: 0px;
+        height: 100%;
+        left: 0px;
+        transform: translateX(-200%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        width: 300px;
+    }
+
+    .colAllMebLeft.active {
+        transform: translateX(0);
+    }
+
+    .collMbrCollPr {
+        position: relative;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .drawerForFilter {
+        display: flex;
+    }
+
+    .filterDrawerLayer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    .colAllMebLeft.active .filterDrawerLayer {
+        display: block;
+    }
+
+    .filterDrawerCross {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .filterDrawerCross img {
+        margin-left: auto;
+    }
+
+    .drawerForFilter img,
+    .filterDrawerCross img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+    }
+
+    .showingMembers {
+        font-size: 18px;
+    }
+
+    body:has(.colAllMebLeft.active) {
+        overflow: hidden;
+    }
+
+    .CollectionAllMember {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .collAllRghtTop {
+        padding: 15px 20px;
+        border-radius: 10px;
+        background: #F6D710;
+    }
+
 }
 
 @media (max-width : 575px) {
@@ -848,6 +974,7 @@
     .bgWithImgBoxRow {
         padding: 20px 20px;
         gap: 15px;
+        border-radius: 10px;
     }
 
     .bgWithImgBoxImgHldr {
@@ -956,5 +1083,23 @@
     .hotelImgGallery.col-3 .hotelGallery a {
         width: 100%;
         height: 250px;
+    }
+
+    .CollectionAllMember {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .detCardsHldr {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+        .showingMembers {
+        font-size: 16px;
+        max-width: 200px;
+        text-wrap: balance;
+    }.collAllRghtTop {
+        padding: 10px 15px;
     }
 }
