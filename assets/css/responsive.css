@@ -1095,11 +1095,18 @@
         gap: 15px;
     }
 
-        .showingMembers {
+    .showingMembers {
         font-size: 16px;
         max-width: 200px;
         text-wrap: balance;
-    }.collAllRghtTop {
+    }
+
+    .collAllRghtTop {
         padding: 10px 15px;
+    }
+
+    .mainHeader.sticky {
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 }

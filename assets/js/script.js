@@ -1,39 +1,39 @@
 Fancybox.bind("[data-fancybox='gallery']", {
-    Thumbs: {
-        autoStart: true,
-    },
-    Toolbar: {
-        display: ["zoom", "close"],
-    },
+  Thumbs: {
+    autoStart: true,
+  },
+  Toolbar: {
+    display: ["zoom", "close"],
+  },
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const drawer = document.querySelector(".headerLinksMobileDrawer");
-    const openBtn = document.querySelector(".menuDrawerOpen");
-    const closeBtn = document.querySelector(".menuDrawerClose");
-    const overlay = document.querySelector(".mobileDrawrLayer");
+  const drawer = document.querySelector(".headerLinksMobileDrawer");
+  const openBtn = document.querySelector(".menuDrawerOpen");
+  const closeBtn = document.querySelector(".menuDrawerClose");
+  const overlay = document.querySelector(".mobileDrawrLayer");
 
-    openBtn.addEventListener("click", () => {
-        drawer.classList.add("active");
-        overlay.classList.add("active");
-    });
+  openBtn.addEventListener("click", () => {
+    drawer.classList.add("active");
+    overlay.classList.add("active");
+  });
 
-    closeBtn.addEventListener("click", () => {
-        drawer.classList.remove("active");
-        overlay.classList.remove("active");
-    });
+  closeBtn.addEventListener("click", () => {
+    drawer.classList.remove("active");
+    overlay.classList.remove("active");
+  });
 
-    overlay.addEventListener("click", () => {
-        drawer.classList.remove("active");
-        overlay.classList.remove("active");
-    });
+  overlay.addEventListener("click", () => {
+    drawer.classList.remove("active");
+    overlay.classList.remove("active");
+  });
 });
 
 
 document.addEventListener("DOMContentLoaded", () => {
   const loadReviewBtn = document.querySelector(".loadMoreReviews .ReviewsBtn");
   const spinner = document.querySelector(".load-more_spinner");
-  const detCrdMn = document.querySelectorAll(".detCrdMn"); 
+  const detCrdMn = document.querySelectorAll(".detCrdMn");
 
   let visibleCount = 3;
 
@@ -71,18 +71,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.querySelector(".filterDrawerCross");
   const overlay = document.querySelector(".filterDrawerLayer");
 
-  // Open drawer
   drawerBtn.addEventListener("click", () => {
     colAllMebLeft.classList.add("active");
   });
 
-  // Close drawer on cross button
   closeBtn.addEventListener("click", () => {
     colAllMebLeft.classList.remove("active");
   });
 
-  // Close drawer on overlay click
   overlay.addEventListener("click", () => {
     colAllMebLeft.classList.remove("active");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".mainHeader");
+  const headerHeight = header.offsetHeight;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      if (!header.classList.contains("sticky")) {
+        header.classList.add("sticky");
+        document.body.style.paddingTop = headerHeight + "px";
+      }
+    } else {
+      if (header.classList.contains("sticky")) {
+        header.classList.remove("sticky");
+        document.body.style.paddingTop = "0";
+      }
+    }
   });
 });
